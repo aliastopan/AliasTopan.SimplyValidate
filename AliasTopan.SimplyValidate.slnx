@@ -7,4 +7,7 @@
   <Folder Name="/src/">
     <Project Path="src/AliasTopan.SimplyValidate/AliasTopan.SimplyValidate.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AliasTopan.SimplyValidate.ManualTest/AliasTopan.SimplyValidate.ManualTest.csproj" />
+  </Folder>
 </Solution>

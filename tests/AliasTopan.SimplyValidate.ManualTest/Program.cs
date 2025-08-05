@@ -1,3 +1,3 @@
-﻿using AliasTopan.SimplyValidate.Tests;
+﻿using AliasTopan.SimplyValidate.ManualTest.Tests;
 
 ValidateAnnotationTest.RunTest();

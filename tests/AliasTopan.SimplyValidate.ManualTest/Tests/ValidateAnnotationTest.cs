@@ -1,8 +1,8 @@
 using System.Text;
 using AliasTopan.EitherPattern;
-using AliasTopan.SimplyValidate.Models;
+using AliasTopan.SimplyValidate.ManualTest.Models;
 
-namespace AliasTopan.SimplyValidate.Tests;
+namespace AliasTopan.SimplyValidate.ManualTest.Tests;
 
 public static class ValidateAnnotationTest
 {

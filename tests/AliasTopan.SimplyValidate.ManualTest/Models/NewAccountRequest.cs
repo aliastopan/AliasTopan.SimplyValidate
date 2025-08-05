@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace AliasTopan.SimplyValidate.Models;
+namespace AliasTopan.SimplyValidate.ManualTest.Models;
 
 public class NewAccountRequest
 {

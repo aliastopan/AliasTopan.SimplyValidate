@@ -1,1 +1,3 @@
-﻿Console.WriteLine("Manual Test");
+﻿using AliasTopan.SimplyValidate.Tests;
+
+ValidateAnnotationTest.RunTest();

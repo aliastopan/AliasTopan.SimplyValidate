@@ -1,5 +1,5 @@
-using System.Text;
 using AliasTopan.EitherPattern;
+using AliasTopan.SimplyValidate.Errors;
 using AliasTopan.SimplyValidate.ManualTest.Models;
 
 namespace AliasTopan.SimplyValidate.ManualTest.Tests;
@@ -29,7 +29,7 @@ public static class ValidateAnnotationTest
 
         result.Match(
             onSuccess: _ => Console.WriteLine("This should not happen."),
-            onError: errors => Console.WriteLine($"{errors.Message}")
+            onError: errors => Console.WriteLine($"{errors.MessageVerbose}")
         );
 
         Console.Write("\n");
@@ -69,32 +69,11 @@ public static class ValidateAnnotationTest
     }
 }
 
-public record CreateAccountError
+public class CreateAccountError : ErrorBase
 {
-    public IReadOnlyCollection<AnnotationError> AnnotationErrors { get; init; }
-    public string Message => FormatErrorMessage();
-
-    public CreateAccountError(IReadOnlyCollection<AnnotationError> annotationErrors)
+    public CreateAccountError(IReadOnlyCollection<AnnotationError> errors)
+        : base(errors)
     {
-        AnnotationErrors = annotationErrors;
-    }
 
-    private string FormatErrorMessage()
-    {
-        if (AnnotationErrors is null || AnnotationErrors.Count is 0)
-        {
-            return string.Empty;
-        }
-
-        StringBuilder builder = new StringBuilder();
-        builder.AppendLine("Account creation failed due to the following annotation errors:");
-
-        int i = 1;
-        foreach (var error in AnnotationErrors)
-        {
-            builder.AppendLine($" {i++}. Member: '{error.MemberName}', Reason: {error.ErrorMessage}");
-        }
-
-        return builder.ToString();
     }
 }

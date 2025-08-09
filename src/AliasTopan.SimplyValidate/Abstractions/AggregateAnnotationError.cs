@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AliasTopan.SimplyValidate.Errors
+namespace AliasTopan.SimplyValidate.Abstractions
 {
-    public abstract class ErrorBase
+    public abstract class AggregateAnnotationError
     {
         public IReadOnlyCollection<AnnotationError> AnnotationErrors { get; }
 
         public virtual string Message => GetFirstErrorMessage();
         public virtual string MessageVerbose => FormatAllErrorMessages();
 
-        protected ErrorBase(IReadOnlyCollection<AnnotationError> errors)
+        protected AggregateAnnotationError(IReadOnlyCollection<AnnotationError> errors)
         {
             AnnotationErrors = errors ?? System.Array.Empty<AnnotationError>();
         }

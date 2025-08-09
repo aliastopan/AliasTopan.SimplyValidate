@@ -1,5 +1,5 @@
 using AliasTopan.EitherPattern;
-using AliasTopan.SimplyValidate.Errors;
+using AliasTopan.SimplyValidate.Abstractions;
 using AliasTopan.SimplyValidate.ManualTest.Models;
 
 namespace AliasTopan.SimplyValidate.ManualTest.Tests;
@@ -29,7 +29,7 @@ public static class ValidateAnnotationTest
 
         result.Match(
             onSuccess: _ => Console.WriteLine("This should not happen."),
-            onError: errors => Console.WriteLine($"{errors.MessageVerbose}")
+            onError: errors => Console.WriteLine($"{errors.Message}")
         );
 
         Console.Write("\n");
@@ -56,21 +56,28 @@ public static class ValidateAnnotationTest
         Console.Write("\n");
     }
 
-    public static Either<CreateAccountError, Success> CreateAccount(NewAccountRequest request)
+    public static Either<IDomainError, Success> CreateAccount(NewAccountRequest request)
     {
         if (!request.ValidateAnnotation(out var annotationErrors))
         {
-            CreateAccountError error = new CreateAccountError(annotationErrors);
+            IDomainError error = new CreateAccountError(annotationErrors);
 
-            return Either<CreateAccountError, Success>.Error(error);
+            return Either<IDomainError, Success>.Error(error);
         }
 
-        return Either<CreateAccountError, Success>.Success(Success.Default);
+        return Either<IDomainError, Success>.Success(Success.Default);
     }
 }
 
-public class CreateAccountError : ErrorBase
+public interface IDomainError
 {
+    public string Message { get; }
+}
+
+public class CreateAccountError : AggregateAnnotationError, IDomainError
+{
+    public override string Message => base.MessageVerbose;
+
     public CreateAccountError(IReadOnlyCollection<AnnotationError> errors)
         : base(errors)
     {

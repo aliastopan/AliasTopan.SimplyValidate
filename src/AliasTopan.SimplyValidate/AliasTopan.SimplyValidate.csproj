@@ -6,6 +6,8 @@
     <PackageId>AliasTopan.SimplyValidate</PackageId>
     <Version>1.0.0-preview.1</Version>
     <Authors>Taufan Augusta</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />

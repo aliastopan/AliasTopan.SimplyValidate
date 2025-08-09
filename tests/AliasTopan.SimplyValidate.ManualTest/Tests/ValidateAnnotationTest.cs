@@ -56,25 +56,25 @@ public static class ValidateAnnotationTest
         Console.Write("\n");
     }
 
-    public static Either<IDomainError, Success> CreateAccount(NewAccountRequest request)
+    public static Either<IAccountError, Success> CreateAccount(NewAccountRequest request)
     {
         if (!request.ValidateAnnotation(out var annotationErrors))
         {
-            IDomainError error = new CreateAccountError(annotationErrors);
+            IAccountError error = new CreateAccountError(annotationErrors);
 
-            return Either<IDomainError, Success>.Error(error);
+            return Either<IAccountError, Success>.Error(error);
         }
 
-        return Either<IDomainError, Success>.Success(Success.Default);
+        return Either<IAccountError, Success>.Success(Success.Default);
     }
 }
 
-public interface IDomainError
+public interface IAccountError
 {
     public string Message { get; }
 }
 
-public class CreateAccountError : AggregateAnnotationError, IDomainError
+public class CreateAccountError : AggregateAnnotationError, IAccountError
 {
     public override string Message => base.MessageVerbose;
 

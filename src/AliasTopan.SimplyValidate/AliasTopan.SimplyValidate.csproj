@@ -6,9 +6,18 @@
     <PackageId>AliasTopan.SimplyValidate</PackageId>
     <Version>1.0.0-preview.1</Version>
     <Authors>Taufan Augusta</Authors>
+    <Description>A straightforward validation library for .NET leveraging DataAnnotations for direct object validation.</Description>
+    <PackageTags>dataannotations;validation;</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/aliastopan/AliasTopan.SimplyValidate</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/aliastopan/AliasTopan.SimplyValidate.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+      <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>

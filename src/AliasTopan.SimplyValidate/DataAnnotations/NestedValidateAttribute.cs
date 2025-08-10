@@ -14,19 +14,17 @@ namespace AliasTopan.SimplyValidate.DataAnnotations
                 return ValidationResult.Success;
             }
 
-            var results = new List<ValidationResult>();
-            var context = new ValidationContext(value, null, null);
+            List<ValidationResult> results = new List<ValidationResult>();
+            ValidationContext context = new ValidationContext(value, null, null);
 
-            bool isNestedObjectValid = Validator.TryValidateObject(value, context, results, true);
+            bool isObjectValid = Validator.TryValidateObject(value, context, results, true);
 
-            if (isNestedObjectValid)
+            if (isObjectValid)
             {
-                return ValidationResult.Success;
+                return new CompositeValidationResult($"The {validationContext.DisplayName} field is invalid.", results);
             }
 
-            string errorMessage = FormatErrorMessage(validationContext.DisplayName);
-
-            return new ValidationResult(errorMessage);
+            return ValidationResult.Success;
         }
     }
 }

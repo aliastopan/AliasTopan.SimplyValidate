@@ -41,9 +41,15 @@ public static class ValidateAnnotationTest
 
         var goodRequest = new NewAccountRequest
         {
-            Username = "aliastopan",
-            Email = "topan@example.com",
-            Password = "secure_password"
+            Username = "johndoe",
+            Email = "jd@example.com",
+            Password = "secure_password",
+            UserInfo = new UserInfo
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                DateOfBirth = new DateOnly(2000,1, 1)
+            }
         };
 
         var result = CreateAccount(goodRequest);

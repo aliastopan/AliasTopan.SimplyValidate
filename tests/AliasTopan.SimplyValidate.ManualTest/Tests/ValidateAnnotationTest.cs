@@ -22,7 +22,13 @@ public static class ValidateAnnotationTest
         {
             Username = "e",
             Email = "not-an-email",
-            Password = "weak"
+            Password = "weak",
+            UserInfo = new UserInfo
+            {
+                FirstName = null!,
+                LastName = null!,
+                DateOfBirth = DateOnly.FromDateTime(DateTime.Today)
+            }
         };
 
         var result = CreateAccount(badRequest);

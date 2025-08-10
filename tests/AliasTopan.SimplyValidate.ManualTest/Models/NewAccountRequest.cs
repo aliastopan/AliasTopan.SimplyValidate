@@ -34,7 +34,6 @@ public class UserInfo
     [StringLength(50, ErrorMessage = "Last Name cannot exceed 50 characters.")]
     public string LastName { get; set; } = string.Empty;
 
-    [Required(ErrorMessage = "Date of Birth is required.")]
     [AgeRequirement(MinimumAge = 18, ErrorMessage = "You must be at least 18 years old to create an account.")]
     public DateOnly DateOfBirth { get; set; }
 }

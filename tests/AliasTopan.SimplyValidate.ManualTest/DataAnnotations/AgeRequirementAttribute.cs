@@ -18,14 +18,21 @@ public class AgeRequirementAttribute : ValidationAttribute
                 age--;
             }
 
+            string[]? memberNames = new[]
+            {
+                validationContext.MemberName!
+            };
+
             if (age < MinimumAge)
             {
-                return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                string errorMessage = FormatErrorMessage(validationContext.DisplayName);
+
+                return new ValidationResult(errorMessage, memberNames);
             }
 
             if (dateOfBirth > today)
             {
-                return new ValidationResult("Date of Birth cannot be in the future.");
+                return new ValidationResult("Date of Birth cannot be in the future.", memberNames);
             }
         }
 

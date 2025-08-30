@@ -70,7 +70,7 @@ public static class ValidateAnnotationTest
 
     public static Either<IAccountError, Success> CreateAccount(NewAccountRequest request)
     {
-        if (!request.ValidateAnnotation(out IReadOnlyCollection<ValidationError> errors))
+        if (!request.Validate(out IReadOnlyCollection<ValidationError> errors))
         {
             IAccountError error = new CreateAccountError(errors);
 

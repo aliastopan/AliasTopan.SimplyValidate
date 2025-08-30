@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
     <AssemblyName>AliasTopan.SimplyValidate</AssemblyName>
     <RootNamespace>AliasTopan.SimplyValidate</RootNamespace>
     <PackageId>AliasTopan.SimplyValidate</PackageId>
-    <Version>1.0.0-preview.1</Version>
+    <Version>1.0.0-preview.2</Version>
     <Authors>Taufan Augusta</Authors>
     <Copyright>© 2025 Taufan Augusta</Copyright>
     <Description>A straightforward validation library for .NET leveraging DataAnnotations for direct object validation.</Description>
@@ -17,7 +17,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
-      <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+      <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />

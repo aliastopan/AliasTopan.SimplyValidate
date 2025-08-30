@@ -6,14 +6,14 @@ namespace AliasTopan.SimplyValidate.Abstractions
 {
     public abstract class AggregateAnnotationError
     {
-        public IReadOnlyCollection<AnnotationError> AnnotationErrors { get; }
+        public IReadOnlyCollection<ValidationError> AnnotationErrors { get; }
 
         public virtual string Message => GetFirstErrorMessage();
         public virtual string MessageVerbose => FormatAllErrorMessages();
 
-        protected AggregateAnnotationError(IReadOnlyCollection<AnnotationError> errors)
+        protected AggregateAnnotationError(IReadOnlyCollection<ValidationError> errors)
         {
-            AnnotationErrors = errors ?? System.Array.Empty<AnnotationError>();
+            AnnotationErrors = errors ?? System.Array.Empty<ValidationError>();
         }
 
         private string GetFirstErrorMessage()

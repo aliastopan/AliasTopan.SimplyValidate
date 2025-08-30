@@ -70,9 +70,9 @@ public static class ValidateAnnotationTest
 
     public static Either<IAccountError, Success> CreateAccount(NewAccountRequest request)
     {
-        if (!request.ValidateAnnotation(out var annotationErrors))
+        if (!request.ValidateAnnotation(out IReadOnlyCollection<ValidationError> errors))
         {
-            IAccountError error = new CreateAccountError(annotationErrors);
+            IAccountError error = new CreateAccountError(errors);
 
             return Either<IAccountError, Success>.Error(error);
         }
@@ -90,7 +90,7 @@ public class CreateAccountError : AggregateAnnotationError, IAccountError
 {
     public override string Message => base.MessageVerbose;
 
-    public CreateAccountError(IReadOnlyCollection<AnnotationError> errors)
+    public CreateAccountError(IReadOnlyCollection<ValidationError> errors)
         : base(errors)
     {
 

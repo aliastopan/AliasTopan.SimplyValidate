@@ -9,16 +9,16 @@ namespace AliasTopan.SimplyValidate
 {
     internal static class AnnotationValidator
     {
-        public static List<AnnotationError> ValidateObject(object instance)
+        public static List<ValidationError> ValidateObject(object instance)
         {
-            List<AnnotationError> errors = new List<AnnotationError>();
+            List<ValidationError> errors = new List<ValidationError>();
 
             ValidateObjectRecursive(instance, errors, parentProperty: string.Empty);
 
             return errors;
         }
 
-        private static void ValidateObjectRecursive(object instance, List<AnnotationError> errors, string parentProperty)
+        private static void ValidateObjectRecursive(object instance, List<ValidationError> errors, string parentProperty)
         {
             if (instance == null)
             {
@@ -32,7 +32,7 @@ namespace AliasTopan.SimplyValidate
         /// <summary>
         /// Validates top-level properties of the given instance.
         /// </summary>
-        private static void TopLevelPropertiesValidation(object instance, List<AnnotationError> errors, string parentProperty)
+        private static void TopLevelPropertiesValidation(object instance, List<ValidationError> errors, string parentProperty)
         {
             ValidationContext context = new ValidationContext(instance);
             List<ValidationResult> results = new List<ValidationResult>();
@@ -54,7 +54,7 @@ namespace AliasTopan.SimplyValidate
                         ? memberName
                         : $"{parentProperty}.{memberName}";
 
-                    errors.Add(new AnnotationError(member, result.ErrorMessage));
+                    errors.Add(new ValidationError(member, result.ErrorMessage));
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace AliasTopan.SimplyValidate
         /// <summary>
         /// Validates nested properties.
         /// </summary>
-        private static void NestedPropertiesValidation(object instance, List<AnnotationError> errors, string parentProperty)
+        private static void NestedPropertiesValidation(object instance, List<ValidationError> errors, string parentProperty)
         {
             PropertyInfo[] properties = instance.GetType()
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -84,7 +84,7 @@ namespace AliasTopan.SimplyValidate
         /// <summary>
         /// Determines if a nested property is a collection or a single object and validates accordingly.
         /// </summary>
-        private static void HandleNestedPropertyValue(object propertyValue, List<AnnotationError> errors, string propertyPrefix)
+        private static void HandleNestedPropertyValue(object propertyValue, List<ValidationError> errors, string propertyPrefix)
         {
             if (propertyValue == null)
                 return;

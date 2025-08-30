@@ -1,6 +1,6 @@
 namespace AliasTopan.SimplyValidate
 {
-    public readonly struct AnnotationError
+    public readonly struct ValidationError
     {
         private readonly string _memberName;
         private readonly string _errorMessage;
@@ -8,7 +8,7 @@ namespace AliasTopan.SimplyValidate
         public string MemberName => _memberName;
         public string ErrorMessage => _errorMessage;
 
-        public AnnotationError(string memberName, string errorMessage)
+        public ValidationError(string memberName, string errorMessage)
         {
             _memberName = memberName;
             _errorMessage = errorMessage;

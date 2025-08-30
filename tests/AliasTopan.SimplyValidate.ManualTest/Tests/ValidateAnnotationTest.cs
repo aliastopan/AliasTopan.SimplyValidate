@@ -1,5 +1,4 @@
 using AliasTopan.EitherPattern;
-using AliasTopan.SimplyValidate.Abstractions;
 using AliasTopan.SimplyValidate.ManualTest.Models;
 
 namespace AliasTopan.SimplyValidate.ManualTest.Tests;
@@ -86,13 +85,14 @@ public interface IAccountError
     public string Message { get; }
 }
 
-public class CreateAccountError : AggregateAnnotationError, IAccountError
+public class CreateAccountError : IAccountError
 {
-    public override string Message => base.MessageVerbose;
+    private readonly IReadOnlyCollection<ValidationError> _errors;
+
+    public string Message => _errors.GetMessageVerbose();
 
     public CreateAccountError(IReadOnlyCollection<ValidationError> errors)
-        : base(errors)
     {
-
+        _errors = errors;
     }
 }

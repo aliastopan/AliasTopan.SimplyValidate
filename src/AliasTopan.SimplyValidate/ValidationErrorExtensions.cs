@@ -40,7 +40,7 @@ namespace AliasTopan.SimplyValidate
         {
             if (errors == null || errors.Count == 0)
             {
-                return "{\"ValidationErrors\":[]}";
+                return "{\n  \"ValidationErrors\": []\n}";
             }
 
             return JsonSerializer.Serialize(new

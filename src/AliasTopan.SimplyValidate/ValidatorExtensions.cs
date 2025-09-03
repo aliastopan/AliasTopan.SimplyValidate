@@ -7,7 +7,7 @@ namespace AliasTopan.SimplyValidate
         public static bool Validate(this object instance,
             out IReadOnlyCollection<ValidationError> errors)
         {
-            errors = AnnotationValidator.ValidateObject(instance);
+            errors = DataAnnotationsValidator.ValidateObject(instance);
 
             return errors.Count == 0;
         }
@@ -15,7 +15,7 @@ namespace AliasTopan.SimplyValidate
         public static bool ValidateWithLog(this object instance,
             out string jsonErrorLog)
         {
-            IReadOnlyCollection<ValidationError> errors = AnnotationValidator.ValidateObject(instance);
+            IReadOnlyCollection<ValidationError> errors = DataAnnotationsValidator.ValidateObject(instance);
             jsonErrorLog = errors.ToJsonErrorLog();
 
             return errors.Count == 0;

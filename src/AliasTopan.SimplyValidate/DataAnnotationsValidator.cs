@@ -7,7 +7,7 @@ using AliasTopan.SimplyValidate.DataAnnotations;
 
 namespace AliasTopan.SimplyValidate
 {
-    internal static class AnnotationValidator
+    internal static class DataAnnotationsValidator
     {
         public static List<ValidationError> ValidateObject(object instance)
         {

@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+#if NET6_0_OR_GREATER
 using System.Text.Json;
+#endif
 
 namespace AliasTopan.SimplyValidate
 {
@@ -36,6 +39,7 @@ namespace AliasTopan.SimplyValidate
             return builder.ToString().TrimEnd();
         }
 
+#if NET6_0_OR_GREATER
         public static string ToJsonErrorLog(this IReadOnlyCollection<ValidationError> errors)
         {
             if (errors == null || errors.Count == 0)
@@ -52,5 +56,6 @@ namespace AliasTopan.SimplyValidate
                 })
             }, new JsonSerializerOptions { WriteIndented = true });
         }
+#endif
     }
 }

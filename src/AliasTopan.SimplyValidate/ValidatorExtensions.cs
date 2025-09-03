@@ -12,6 +12,7 @@ namespace AliasTopan.SimplyValidate
             return errors.Count == 0;
         }
 
+#if NET6_0_OR_GREATER
         public static bool ValidateWithLog(this object instance,
             out string jsonErrorLog)
         {
@@ -20,5 +21,6 @@ namespace AliasTopan.SimplyValidate
 
             return errors.Count == 0;
         }
+#endif
     }
 }

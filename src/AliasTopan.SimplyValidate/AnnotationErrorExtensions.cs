@@ -40,15 +40,15 @@ namespace AliasTopan.SimplyValidate
         {
             if (errors == null || errors.Count == 0)
             {
-                return "{\"errors\":[]}";
+                return "{\"ValidationErrors\":[]}";
             }
 
             return JsonSerializer.Serialize(new
             {
-                errors = errors.Select(e => new
+                ValidationErrors = errors.Select(e => new
                 {
-                    memberName = e.MemberName,
-                    errorMessage = e.ErrorMessage
+                    e.MemberName,
+                    e.ErrorMessage
                 })
             }, new JsonSerializerOptions { WriteIndented = true });
         }

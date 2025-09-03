@@ -40,11 +40,13 @@ namespace AliasTopan.SimplyValidate
         }
 
 #if NET6_0_OR_GREATER
-        public static string ToJsonErrorLog(this IReadOnlyCollection<ValidationError> errors)
+        public static string ToJsonErrorLog(this IReadOnlyCollection<ValidationError> errors, bool writeIndented = false)
         {
             if (errors == null || errors.Count == 0)
             {
-                return "{\n  \"ValidationErrors\": []\n}";
+                return writeIndented
+                    ? "{\n  \"ValidationErrors\": []\n}"
+                    : "{\"ValidationErrors\":[]}";
             }
 
             return JsonSerializer.Serialize(new
@@ -54,7 +56,7 @@ namespace AliasTopan.SimplyValidate
                     e.MemberName,
                     e.ErrorMessage
                 })
-            }, new JsonSerializerOptions { WriteIndented = true });
+            }, new JsonSerializerOptions { WriteIndented = writeIndented });
         }
 #endif
     }

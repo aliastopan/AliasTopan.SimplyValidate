@@ -14,10 +14,10 @@ namespace AliasTopan.SimplyValidate
 
 #if NET6_0_OR_GREATER
         public static bool ValidateWithLog(this object instance,
-            out string jsonErrorLog)
+            out string jsonErrorLog, bool writeIndented = false)
         {
             IReadOnlyCollection<ValidationError> errors = DataAnnotationsValidator.ValidateObject(instance);
-            jsonErrorLog = errors.ToJsonErrorLog();
+            jsonErrorLog = errors.ToJsonErrorLog(writeIndented);
 
             return errors.Count == 0;
         }

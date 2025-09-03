@@ -7,7 +7,7 @@ namespace AliasTopan.SimplyValidate
 {
     public static class ValidationErrorExtensions
     {
-        public static string GetMessage(this IReadOnlyCollection<ValidationError> errors)
+        public static string GetErrorMessage(this IReadOnlyCollection<ValidationError> errors)
         {
             if (errors.Count == 0)
             {
@@ -17,7 +17,7 @@ namespace AliasTopan.SimplyValidate
             return errors.First().ErrorMessage;
         }
 
-        public static string GetMessageVerbose(this IReadOnlyCollection<ValidationError> errors)
+        public static string GetErrorMessageVerbose(this IReadOnlyCollection<ValidationError> errors)
         {
             if (errors.Count == 0)
             {

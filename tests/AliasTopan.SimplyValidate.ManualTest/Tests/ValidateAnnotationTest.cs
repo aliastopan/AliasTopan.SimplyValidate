@@ -89,7 +89,7 @@ public class CreateAccountError : IAccountError
 {
     private readonly IReadOnlyCollection<ValidationError> _errors;
 
-    public string Message => _errors.GetMessageVerbose();
+    public string Message => _errors.GetErrorMessageVerbose();
 
     public CreateAccountError(IReadOnlyCollection<ValidationError> errors)
     {

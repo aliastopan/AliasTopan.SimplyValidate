@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace AliasTopan.SimplyValidate
 {
-    public static class AnnotationErrorExtensions
+    public static class ValidationErrorExtensions
     {
         public static string GetMessage(this IReadOnlyCollection<ValidationError> errors)
         {

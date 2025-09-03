@@ -10,7 +10,7 @@ namespace AliasTopan.SimplyValidate
         {
             if (errors.Count == 0)
             {
-                return "An unspecified validation error occurred.";
+                return "No validation errors.";
             }
 
             return errors.First().ErrorMessage;
@@ -20,7 +20,7 @@ namespace AliasTopan.SimplyValidate
         {
             if (errors.Count == 0)
             {
-                return "No validation errors were found.";
+                return "No validation errors.";
             }
 
             StringBuilder builder = new StringBuilder();

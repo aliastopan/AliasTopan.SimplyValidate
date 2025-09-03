@@ -1,4 +1,4 @@
 ﻿using AliasTopan.SimplyValidate.ManualTest.Tests;
 
-ValidateAnnotationTest.RunTest();
+ValidateTest.RunTest();
 ValidateWithLogTest.RunTest();

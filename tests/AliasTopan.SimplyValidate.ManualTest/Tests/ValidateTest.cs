@@ -3,11 +3,11 @@ using AliasTopan.SimplyValidate.ManualTest.Models;
 
 namespace AliasTopan.SimplyValidate.ManualTest.Tests;
 
-public static class ValidateAnnotationTest
+public static class ValidateTest
 {
     public static void RunTest()
     {
-        Console.WriteLine("# _ValidateAnnotationTest_");
+        Console.WriteLine("# _ValidateTest_");
 
         BadRequestExample();
         GoodRequestExample();

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 
 namespace AliasTopan.SimplyValidate
 {
@@ -33,6 +34,23 @@ namespace AliasTopan.SimplyValidate
             }
 
             return builder.ToString().TrimEnd();
+        }
+
+        public static string ToJsonErrorLog(this IReadOnlyCollection<ValidationError> errors)
+        {
+            if (errors == null || errors.Count == 0)
+            {
+                return "{\"errors\":[]}";
+            }
+
+            return JsonSerializer.Serialize(new
+            {
+                errors = errors.Select(e => new
+                {
+                    memberName = e.MemberName,
+                    errorMessage = e.ErrorMessage
+                })
+            }, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }

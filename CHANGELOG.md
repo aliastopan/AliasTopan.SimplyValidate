@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.0.0-preview.3"></a>
+## [1.0.0-preview.3](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0-preview.3) (2025-09-03)
+
+### Features
+
+* validate with out argument formatted error log ([1824146](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/182414606cc915261b64ce7e996aed7a4e50f1a3))
+
+### Breaking Changes
+
+* explicit rename of validation error extension method ([bf24eb1](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/bf24eb1b6d8e5636f942dc2d5735df47ad96f070))
+
 <a name="1.0.0-preview.2"></a>
 ## [1.0.0-preview.2](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0-preview.2) (2025-08-30)
 

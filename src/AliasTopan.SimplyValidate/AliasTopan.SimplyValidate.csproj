@@ -4,7 +4,7 @@
     <AssemblyName>AliasTopan.SimplyValidate</AssemblyName>
     <RootNamespace>AliasTopan.SimplyValidate</RootNamespace>
     <PackageId>AliasTopan.SimplyValidate</PackageId>
-    <Version>1.0.0-preview.2</Version>
+    <Version>1.0.0-preview.3</Version>
     <Authors>Taufan Augusta</Authors>
     <Copyright>© 2025 Taufan Augusta</Copyright>
     <Description>A straightforward validation library for .NET leveraging DataAnnotations for direct object validation.</Description>

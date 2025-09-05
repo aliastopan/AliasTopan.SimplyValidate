@@ -28,7 +28,7 @@ public class ValidateTests
     [Arguments("user.name", "")]
     [Arguments("", "p@ss.word012")]
     [Arguments("", "")]
-    public async Task Object_WithInvalidDataAnnotation_ShouldNotPassValidation(string username, string password)
+    public async Task Object_WithInvalidDataAnnotation_ShouldFailValidation(string username, string password)
     {
         // Arrange
         var request = new LoginRequest

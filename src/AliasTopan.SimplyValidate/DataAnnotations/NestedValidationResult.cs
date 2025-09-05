@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace AliasTopan.SimplyValidate.DataAnnotations
 {
-    internal sealed class CompositeValidationResult : ValidationResult
+    internal sealed class NestedValidationResult : ValidationResult
     {
         public IReadOnlyCollection<ValidationResult> Results { get; }
 
-        public CompositeValidationResult(string errorMessage, IEnumerable<ValidationResult> results)
+        public NestedValidationResult(string errorMessage, IEnumerable<ValidationResult> results)
             : base(errorMessage)
         {
             Results = results.ToList().AsReadOnly();

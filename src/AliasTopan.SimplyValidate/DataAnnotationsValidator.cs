@@ -41,7 +41,7 @@ namespace AliasTopan.SimplyValidate
 
             foreach (ValidationResult result in results)
             {
-                if (result is CompositeValidationResult)
+                if (result is NestedValidationResult)
                     continue;
 
                 IEnumerable<string> memberNames = result.MemberNames.Any()

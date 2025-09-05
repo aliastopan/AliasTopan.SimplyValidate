@@ -21,7 +21,7 @@ namespace AliasTopan.SimplyValidate.DataAnnotations
 
             if (isObjectValid)
             {
-                return new CompositeValidationResult($"The {validationContext.DisplayName} field is invalid.", results);
+                return new NestedValidationResult($"The {validationContext.DisplayName} field is invalid.", results);
             }
 
             return ValidationResult.Success;

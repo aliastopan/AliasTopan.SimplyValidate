@@ -9,5 +9,6 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/AliasTopan.SimplyValidate.ManualTest/AliasTopan.SimplyValidate.ManualTest.csproj" />
+    <Project Path="tests/AliasTopan.SimplyValidate.UnitTests/AliasTopan.SimplyValidate.UnitTests.csproj" />
   </Folder>
 </Solution>

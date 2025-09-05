@@ -69,7 +69,7 @@ namespace AliasTopan.SimplyValidate
 
             foreach (PropertyInfo property in properties)
             {
-                if (!property.IsDefined(typeof(NestedValidateAttribute), true))
+                if (!property.IsDefined(typeof(NestedAttribute), true))
                     continue;
 
                 object propertyValue = property.GetValue(instance);

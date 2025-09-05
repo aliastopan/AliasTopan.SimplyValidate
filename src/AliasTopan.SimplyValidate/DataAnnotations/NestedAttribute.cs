@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace AliasTopan.SimplyValidate.DataAnnotations
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public sealed class NestedValidateAttribute : ValidationAttribute
+    public sealed class NestedAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {

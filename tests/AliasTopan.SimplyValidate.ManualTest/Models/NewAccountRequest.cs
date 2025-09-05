@@ -20,7 +20,7 @@ public class NewAccountRequest
     public string Password { get; set; } = string.Empty;
 
     [Required]
-    [NestedValidate(ErrorMessage = "The {0} field contains invalid data.")]
+    [Nested(ErrorMessage = "The {0} field contains invalid data.")]
     public UserInfo UserInfo { get; set; } = new UserInfo();
 }
 

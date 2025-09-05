@@ -2,13 +2,13 @@ using AliasTopan.SimplyValidate.UnitTests.Models;
 
 namespace AliasTopan.SimplyValidate.UnitTests;
 
-public class ValidateNestedTests
+public class NestedAttributeTests
 {
     [Test]
     [Arguments("k.reeves", "Keanu", "Reeves")]
     [Arguments("neo", "Thomas", "Anderson")]
     [Arguments("mr.wick", "John", "Wick")]
-    public async Task NestedObject_WithValidDataAnnotation_ShouldPassValidation(string username, string firstName, string lastName)
+    public async Task NestedObject_WithValidNestedAttribute_ShouldPassValidation(string username, string firstName, string lastName)
     {
         // Arrange
         var user = new User
@@ -34,7 +34,7 @@ public class ValidateNestedTests
     [Arguments("mr.wick", "John", "")]
     [Arguments("mr.wick", "", "")]
     [Arguments("", "", "")]
-    public async Task NestedObject_WithInvalidDataAnnotation_ShouldFailValidation(string username, string firstName, string lastName)
+    public async Task NestedObject_WithInvalidNestedAttribute_ShouldFailValidation(string username, string firstName, string lastName)
     {
         // Arrange
         var user = new User

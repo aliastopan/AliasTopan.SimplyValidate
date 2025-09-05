@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.0.0-preview.4"></a>
+## [1.0.0-preview.4](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0-preview.4) (2025-09-05)
+
+### Features
+
+* add optional argument to format json error log ([e43edf8](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/e43edf8d8e9ce0cc7b9e10c13a96f10aa1096675))
+
+### Breaking Changes
+
+* rename nested validation attribute to `Nested` ([bc25c45](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/bc25c4562c706ef44f0bd5029307b1e4dd4eb021))
+
 <a name="1.0.0-preview.3"></a>
 ## [1.0.0-preview.3](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0-preview.3) (2025-09-03)
 

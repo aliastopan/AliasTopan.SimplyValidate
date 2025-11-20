@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.0.0"></a>
+## [1.0.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0) (2025-11-20)
+
+### Features
+
+* add `MustBeTrue` attribute ([2b11bd9](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/2b11bd956b64b999b4913a5dcef6c9aedc62267a))
+
 <a name="1.0.0-preview.4"></a>
 ## [1.0.0-preview.4](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0-preview.4) (2025-09-05)
 

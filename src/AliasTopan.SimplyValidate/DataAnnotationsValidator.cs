@@ -50,11 +50,21 @@ namespace AliasTopan.SimplyValidate
 
                 foreach (string memberName in memberNames)
                 {
-                    string member = string.IsNullOrEmpty(parentProperty)
-                        ? memberName
-                        : $"{parentProperty}.{memberName}";
+                    string fullPath;
 
-                    errors.Add(new ValidationError(member, result.ErrorMessage));
+                    // model (top-level) error if memberName is empty
+                    if (string.IsNullOrEmpty(memberName))
+                    {
+                        fullPath = parentProperty;
+                    }
+                    else
+                    {
+                        fullPath = string.IsNullOrEmpty(parentProperty)
+                            ? memberName
+                            : $"{parentProperty}.{memberName}";
+                    }
+
+                    errors.Add(new ValidationError(fullPath, result.ErrorMessage));
                 }
             }
         }

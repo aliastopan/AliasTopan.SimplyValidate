@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.1.0"></a>
+## [1.1.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.1.0) (2025-12-07)
+
+### Features
+
+* add `NotEmptyGuid` attribute ([66f8fca](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/66f8fca1b9c8775712f1ceef6e8667e9078ac825))
+* add `ParsableEnum` attribute ([0435b98](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/0435b98badff92622c93bfa2b668633ca0a0769c))
+
+### Bug Fixes
+
+* model-level error member name reference ([de9df1e](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/de9df1e5cff5668a21039caa5f5d6b1768e03c0d))
+
 <a name="1.0.0"></a>
 ## [1.0.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.0.0) (2025-11-20)
 

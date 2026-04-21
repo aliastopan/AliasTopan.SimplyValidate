@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.2.0"></a>
+## [1.2.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.2.0) (2026-04-21)
+
+### Features
+
+* extend new attributes ([feaca82](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/feaca822d54bd20fa646d0f617d6bca7230f9805))
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.1.0) (2025-12-07)
 

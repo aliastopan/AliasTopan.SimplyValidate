@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.2.1"></a>
+## [1.2.1](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.2.1) (2026-04-21)
+
+### Bug Fixes
+
+* missing namespace ([0c70d78](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/0c70d78537bca4dbdcafc97a30bc6d229fd76e70))
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.2.0) (2026-04-21)
 

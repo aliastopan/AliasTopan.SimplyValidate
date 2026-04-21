@@ -1,36 +1,39 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Parameter, AllowMultiple = false)]
-public sealed class NotZeroAttribute : ValidationAttribute
+namespace AliasTopan.SimplyValidate.DataAnnotations
 {
-    public NotZeroAttribute()
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Parameter, AllowMultiple = false)]
+    public sealed class NotZeroAttribute : ValidationAttribute
     {
-        ErrorMessage = "The {0} field cannot be zero.";
-    }
-
-    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-    {
-        if (value == null)
+        public NotZeroAttribute()
         {
-            // Let [Required] handle nulls if needed
-            return ValidationResult.Success;
+            ErrorMessage = "The {0} field cannot be zero.";
         }
 
-        try
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            decimal number = Convert.ToDecimal(value);
-
-            if (number == 0m)
+            if (value == null)
             {
-                return new ValidationResult(FormatErrorMessage(validationContext.MemberName));
+                // Let [Required] handle nulls if needed
+                return ValidationResult.Success;
             }
 
-            return ValidationResult.Success;
-        }
-        catch
-        {
-            return new ValidationResult($"{validationContext.MemberName} must be a numeric type.");
+            try
+            {
+                decimal number = Convert.ToDecimal(value);
+
+                if (number == 0m)
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.MemberName));
+                }
+
+                return ValidationResult.Success;
+            }
+            catch
+            {
+                return new ValidationResult($"{validationContext.MemberName} must be a numeric type.");
+            }
         }
     }
 }

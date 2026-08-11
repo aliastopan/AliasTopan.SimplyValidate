@@ -10,7 +10,7 @@ public sealed class NotEmptyGuidAttributeTests
         // Arrange
         var employee = new Employee
         {
-            EmployeeId = new ValueObjectId()
+            EmployeeId = Guid.NewGuid()
         };
 
         // Act
@@ -26,7 +26,7 @@ public sealed class NotEmptyGuidAttributeTests
         // Arrange
         var employee = new Employee
         {
-            EmployeeId = new ValueObjectId(Guid.Empty)
+            EmployeeId = Guid.Empty
         };
 
         // Act

@@ -5,5 +5,5 @@ namespace AliasTopan.SimplyValidate.UnitTests.Models;
 public sealed class Employee
 {
     [NotEmptyGuid]
-    public ValueObjectId EmployeeId { get; set; }
+    public Guid EmployeeId { get; set; }
 }

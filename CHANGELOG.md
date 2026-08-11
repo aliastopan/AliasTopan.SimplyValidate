@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.3.0"></a>
+## [1.3.0](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.3.0) (2026-08-11)
+
+### Features
+
+* add `Base64` attribute ([0e93433](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/0e93433701e5170dd341dd9365eb34c108474ad2))
+* add `OneOf` attribute ([6d52b19](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/6d52b19bc0bd9c2217db334d98e6e66cd25e1ad8))
+* add `PositiveInteger` attribute ([1ad290c](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/commit/1ad290cf34bce4a67c8cb9ad99507c2979ef00c9))
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://www.github.com/aliastopan/AliasTopan.SimplyValidate/releases/tag/v1.2.1) (2026-04-21)
 
